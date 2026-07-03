@@ -20,8 +20,8 @@
       </article>
 
       <div class="buttons">
-        <button id="download-resume">Resume</button>
-        <button id="projects">Projects</button>
+        <button id="download-resume"><img :src="downloadLogo" alt="download-icon" id="download" />Resume</button>
+        <button id="projects"><img :src="projectIcon" alt="stack image" id="project-icon" />Projects</button>
       </div>
     </article>
 
@@ -47,6 +47,8 @@ export default {
       profileImage: require('@/assets/profile-image.png'),
       scrollIcon: require('@/assets/scroll-icon.png'),
       logo: "</Gift>",
+      downloadLogo: require('@/assets/download-icon.png'),
+      projectsIcon: require('@/assets/projects-icon.png'),
 
       letters: [
         'G',
@@ -136,6 +138,8 @@ header h2 {
 }
 
 .loading-screen h1 {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
   display: inline-block;
   animation: growShrink 0.6s ease-in-out;
   animation-fill-mode: both;
@@ -156,6 +160,8 @@ header h2 {
   border: 1px solid rgb(255, 255, 255);
   border-radius: 30px;
   z-index: 5;
+  background-color: rgba(183, 183, 183, 0.2);
+  backdrop-filter: blur(15px);
 
 }
 
@@ -189,6 +195,14 @@ header h2 {
   justify-content: center;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 20px;
+  backdrop-filter: blur(15px);
+}
+
+.summary h2 {
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+
 }
 
 .buttons {
@@ -200,18 +214,43 @@ header h2 {
 }
 
 #download-resume {
-  width: 180px;
-  height: 40px;
-  border: 1px solid white;
-  border-radius: 20px;
+  display: flex;
+  width: 200px;
+  height: 50px;
+  border: .5px solid white;
+  color: white;
+  gap: 20px;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+}
+
+#download {
+  width: 30px;
+  height: 30px;
+
 }
 
 #projects {
-  width: 180px;
-  height: 40px;
-  border: 1px solid white;
-  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  border: .5px solid white;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 20px;
 }
+
+#projects-icon {
+  width: 25px;
+  height: 25px;
+}
+
+
 
 /*Information Panel*/
 
@@ -219,25 +258,41 @@ header h2 {
   position: relative;
   display: flex;
   flex: 1;
-  border: 1px solid white;
+  border: .5px solid white;
+  align-items: center;
+  justify-content: center;
+}
+
+#mac-panel {
+  position: relative;
+  display: flex;
+  width: 60%;
+  height: 80%;
+  border: .5px solid white;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(15px);
 }
 
 #head {
   position: relative;
   display: flex;
-  width: 50px;
-  align-self: center;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: black;
+
 }
 
 #dot {
-  width: 10px;
-  height: 10px;
-  gap: 5px;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  left: 10px;
+  padding-left: 8px;
 }
-
-
-
-
 
 
 .scroll-view {
